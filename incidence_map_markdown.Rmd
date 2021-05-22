@@ -1,0 +1,30 @@
+---
+title: "新冠病毒本土各鄉鎮市區案盛行率今年迄5/22"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Prevalence by district for loccally acquired covid cases in Taiwan from 01/01/2021 to 05/22/2021
+
+
+```{r Prevalence map, echo=FALSE}
+require(tmap)
+tmap_mode("view")
+incidence.map
+```
+
+### Notes
+1. Prevalence is given as cases per 100,000 people
+   盛行率是各鄉鎮市區每十萬人口的本土個案
+   本土個案數據來源 Data source for case numbers: https://nidss.cdc.gov.tw/nndss/DiseaseMap?id=19CoV
+
+2. Population data is from 2017. 人口為106年的人口
+   Population data scource人口數據來源： https://data.gov.tw/dataset/8410
+
+3. The Code used to make this map is available at: 
+https://github.com/TulipsforTaiwan/TaiwanCovid
+
+-----
