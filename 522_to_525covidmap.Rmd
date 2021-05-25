@@ -1,0 +1,66 @@
+---
+title: "各鄉鎮市區每十萬人口新增本土個案"
+subtitle: "05/22/2021 to 05/25/2021 5AM"
+output:
+  prettydoc::html_pretty:
+    theme: hpstr
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# New cases per 100,000 people by district for locally acquired covid cases in Taiwan
+## Time period: 05/22/2021 to 05/25/2021 @ 5am
+
+```{r Prevalence map, echo=FALSE}
+require(tmap)
+tmap_mode("view")
+new_cases_per_hundred_thousand.map
+```
+
+This map shows new cases announced between 05/22/2021 and 05/25/2021 at 5am. The map includes the retrospectively adjusted (矯正回歸) cases announced during this time period. The way Taiwan CDC reports their data doesn't allow me to exclude retrospectively adjusted cases while keeping district level information, so this map needs to be interpreted carefully. Just because a case was publicly announced between May 22 and May 25, doesn't mean that case was out in the community and infectious during this time period. They may have been tested and isolated while waiting for results well before they were publicly announced.
+
+本地圖顯示5月22日至5月25日上午5點之間公佈的新個案,包含本期間所謂的【校正回歸】個案。因爲台灣疾管署公開數據平臺的限制，我無法排除【校正回歸】個案且同時保留鄉鎮市區的欄位。因此,本地圖要小心翼翼地解讀。就算一個個案5月22日至5月25日之間被公佈了，這個并不代表在這個期間内這個個案在社區中或有傳染的風險。也許在公佈之前，這個個案早去篩檢了，已經隔離了等檢驗報告。 
+
+更多關於【校正回歸】可以參考這兩個文章:   
+For more about retrospective adjustment (Chinese only):
+
+1. 臺大公共衛生學院   
+http://coph.ntu.edu.tw/web/message/message.jsp?cp_no=CP1621793950436&lang=tw&fbclid=IwAR1UE5FrRZ51JEq3pxpHlbysc6-_iSFEGqQVUxmFWwzFzLjO4zOBAUrBrA8
+
+2. 臺北市長   
+https://www.facebook.com/DoctorKoWJ/posts/3466647313437224   
+
+
+
+For more Taiwanese covid maps and commentary about Taiwan's current outbreak:   
+更多台灣疫情相關的地圖與評論可以參考 :
+
+https://tulipsfortaiwan.blogspot.com/p/maps-of-taiwans-covid-outbreak.html   
+   
+   
+
+
+### Notes
+
+1. Population data is from 2017.    
+人口為106年的人口
+
+2. The code and data used to make this map is available at   
+這張地圖的程式碼以及數據在: 
+https://github.com/TulipsforTaiwan/TaiwanCovid
+
+3. Color scale is non-continuous, Wanhua has 4-5 times more cases per 100,000 people than any other township in Taiwan.   
+看顏色的時候要有一點點小心，萬華的每十萬人口的個案比其他的鄉鎮市區高4-5倍   
+
+Data source for case numbers:   
+本土個案數據來源:   
+https://nidss.cdc.gov.tw/nndss/DiseaseMap?id=19CoV
+
+Population data source:   
+人口數據來源:   
+https://data.gov.tw/dataset/8410
+
+
+-----
