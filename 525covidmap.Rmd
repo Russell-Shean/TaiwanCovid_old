@@ -1,0 +1,54 @@
+---
+title: "今年迄5/25上午5am各鄉鎮市區"
+subtitle: "每十萬人口的新冠病毒本土個案"
+output:
+  prettydoc::html_pretty:
+    theme: hpstr
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Cases per 100,000 people by district for locally acquired covid cases in Taiwan
+## time period:01/01/2021 to 05/25/2021 @ 5am
+
+```{r incidence map script, include=FALSE}
+#gets us in the right working directory
+setwd("C:/Users/rshea/Desktop/old computer/Covid")
+
+#stuff to do in console
+# library(rmarkdown)
+#render("525covidmap.Rmd")
+
+#this runs the incidence map scripts
+source("Incidence_map_script.R")
+
+```
+
+
+```{r Prevalence map, echo=FALSE}
+require(tmap)
+tmap_mode("view")
+cases_per_hundred_thousand.map
+```
+
+For more Taiwanese covid maps and commentary about Taiwan's current outbreak: https://tulipsfortaiwan.blogspot.com/p/maps-of-taiwans-covid-outbreak.html 
+
+### Notes
+1. This map shows the number of cases per 100,000 people for each district from  01/01/2021 to 05/25/2021 at 5AM
+本地圖顯示今年初迄05/25/2021上午5點
+的各鄉鎮市區每十萬人口的本土個案
+   
+   本土個案數據來源 Data source for case numbers:     https://nidss.cdc.gov.tw/nndss/DiseaseMap?id=19CoV
+
+2. Population data is from 2017. 人口為106年的人口
+   
+   Population data source人口數據來源： https://data.gov.tw/dataset/8410
+
+3. The Code used to make this map is available at: 
+https://github.com/TulipsforTaiwan/TaiwanCovid
+
+4. Color scale is non-continuous, Wanhua has 4-5 times more cases per 100,000 people than any other township in Taiwan
+
+-----
